@@ -2,7 +2,7 @@ FROM jenkins/jnlp-slave
 
 USER root
 RUN apt-get update
-RUN apt-get -y install \
+RUN apt-get install  -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -17,4 +17,4 @@ RUN add-apt-repository \
     stable"
 
 RUN apt-get update
-RUN apt-get -y install docker-ce-cli
+RUN apt-get install -y docker-ce-cli

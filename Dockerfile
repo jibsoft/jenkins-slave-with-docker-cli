@@ -19,6 +19,13 @@ RUN add-apt-repository \
 RUN apt-get update
 RUN apt-get install -y docker-ce-cli
 
-RUN chmod 777 /home/jenkins/agent
+# RUN chmod 777 /home/jenkins/agent
 
-RUN jenkins-agent
+ARG user=jenkins
+USER ${user}
+
+ARG AGENT_WORKDIR=/home/${user}/agent
+ENV AGENT_WORKDIR=${AGENT_WORKDIR}
+VOLUME ${AGENT_WORKDIR}
+
+ENTRYPOINT ["jenkins-agent"]

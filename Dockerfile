@@ -24,9 +24,9 @@ RUN apt-get install -y docker-ce-cli
 # ARG user=jenkins
 # USER ${user}
 
-ARG AGENT_WORKDIR=/home/${user}/agent
-ENV AGENT_WORKDIR=${AGENT_WORKDIR}
-VOLUME ${AGENT_WORKDIR}
-RUN chmod 777 ${AGENT_WORKDIR}
+# ARG AGENT_WORKDIR=/home/${user}/agent
+# ENV AGENT_WORKDIR=${AGENT_WORKDIR}
+# VOLUME ${AGENT_WORKDIR}
+# RUN chmod 777 ${AGENT_WORKDIR}
 
-ENTRYPOINT ["jenkins-agent"]
+# ENTRYPOINT ["jenkins-agent"]

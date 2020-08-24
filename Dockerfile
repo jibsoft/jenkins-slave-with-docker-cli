@@ -20,6 +20,6 @@ RUN apt-get update
 RUN apt-get install -y docker-ce-cli
 
 RUN chmod 777 /home/jenkins/agent
-USER jenkins
+# USER jenkins
 
 ENTRYPOINT ["jenkins-agent"]
